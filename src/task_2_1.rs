@@ -68,17 +68,14 @@ impl std::ops::Add<&Step> for Position{
 
 #[cfg(test)]
 mod tests {
-    use crate::util::read_file;
+    use crate::util::{parse_iter, read_file};
     use super::*;
 
     #[test]
     fn should_calculate_position() {
         // given
-        let steps: Vec<Step> = vec!["forward 5", "down 5", "forward 8", "up 3", "down 8", "forward 2"]
-            .iter()
-            .map(|s| s.parse::<Step>())
-            .collect::<Result<Vec<Step>, AoCError>>()
-            .unwrap();
+        let test_data = vec!["forward 5", "down 5", "forward 8", "up 3", "down 8", "forward 2"];
+        let steps = parse_iter(&mut test_data.into_iter()).unwrap();
 
         // when
         let result: Position = calculate_position(&steps);

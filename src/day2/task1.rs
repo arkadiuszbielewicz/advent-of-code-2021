@@ -1,12 +1,12 @@
 use std::str::FromStr;
 use crate::util::AoCError;
 
-fn calculate_position(steps: &Vec<Step>) -> Position {
+pub fn calculate_position(steps: &Vec<Step>) -> Position {
     steps.iter().fold(Position::default(), |last_pos, step| last_pos + step)
 }
 
 #[derive(Debug)]
-struct Step {
+pub struct Step {
     direction: Direction,
     distance: isize,
 }
@@ -43,13 +43,13 @@ impl FromStr for Direction {
 }
 
 #[derive(Debug, Eq, PartialEq, Default)]
-struct Position {
+pub struct Position {
     hor_pos: isize,
     depth: isize,
 }
 
 impl Position {
-    fn score(&self) -> isize {
+    pub fn score(&self) -> isize {
         self.hor_pos * self.depth
     }
 }
@@ -83,18 +83,5 @@ mod tests {
         // then
         assert_eq!(result, Position { hor_pos: 15, depth: 10 });
         assert_eq!(result.score(), 150);
-    }
-
-    #[test]
-    fn should_calculate_position_task() {
-        // given
-        let steps = read_file::<Step>("res/task_2.txt").unwrap();
-
-        // when
-        let result: Position = calculate_position(&steps);
-
-        // then
-        assert_eq!(result, Position { hor_pos: 1998, depth: 741 });
-        assert_eq!(result.score(), 1480518);
     }
 }

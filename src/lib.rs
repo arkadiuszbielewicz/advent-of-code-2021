@@ -1,5 +1,4 @@
-mod task_1_1;
-mod task_1_2;
-mod task_2_1;
-mod task_2_2;
+pub mod day1;
+pub mod day2;
+pub mod day3;
 mod util;

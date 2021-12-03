@@ -1,4 +1,4 @@
-fn count_increments(report: &Vec<usize>) -> usize {
+pub fn count_increments(report: &Vec<usize>) -> usize {
     report.windows(2).filter(|w| w[0] < w[1]).count()
 }
 
@@ -17,17 +17,5 @@ mod tests {
 
         // then
         assert_eq!(increment_count, 7)
-    }
-
-    #[test]
-    fn should_count_increments_task() {
-        // give
-        let report = read_file::<usize>("res/task_1.txt").unwrap();
-
-        // when
-        let increment_count = count_increments(&report);
-
-        // then
-        assert_eq!(increment_count, 1301)
     }
 }

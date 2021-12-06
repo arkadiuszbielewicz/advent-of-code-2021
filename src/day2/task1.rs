@@ -68,7 +68,7 @@ impl std::ops::Add<&Step> for Position{
 
 #[cfg(test)]
 mod tests {
-    use crate::util::{parse_iter, read_file};
+    use crate::util::parse_iter;
     use super::*;
 
     #[test]

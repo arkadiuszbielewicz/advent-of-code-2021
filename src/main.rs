@@ -8,4 +8,5 @@ fn main() {
     println!("Task 2: {}", advent_of_code_2021::day2::task2());
     println!("---------------------------");
     println!("Day 3");
+    println!("Task 1: {}", advent_of_code_2021::day3::task1());
 }

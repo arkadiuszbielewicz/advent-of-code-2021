@@ -4,7 +4,6 @@ pub fn count_increments(report: &Vec<usize>) -> usize {
 
 #[cfg(test)]
 mod tests {
-    use crate::util::read_file;
     use super::*;
 
     #[test]

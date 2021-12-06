@@ -10,7 +10,6 @@ pub fn count_increments_mean(report: &Vec<usize>) -> usize {
 
 #[cfg(test)]
 mod tests {
-    use crate::util::read_file;
     use super::*;
 
     #[test]
